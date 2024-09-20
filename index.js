@@ -3,8 +3,13 @@ const http = require('http');
 
 //buat server
 const server = http.createServer((req,res)=>{
-    res.writeHead(200,{'content-type':'text/html'});
-    res.write('selamat pagi');
+ //   res.writeHead(200,{'content-type':'text/html'});
+ //   res.write('selamat pagi');
+    res.writeHead(200,{'content-Type': 'aplication/json'});
+    res.write(JSON.stringify({
+        'message' : 'selamat pagi',
+        'status' : 'success'
+    }));
     res.end();
 });
 
